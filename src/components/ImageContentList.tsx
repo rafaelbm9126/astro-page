@@ -10,15 +10,17 @@ export const ImageContentList = (props: Props) => {
   return (
     <>
       {!load && <LazyLoaderImage />}
-      <img
-        className={`object-cover w-full h-56 rounded-lg lg:w-64 ${
-          !load ? "hidden" : "block"
-        }`}
-        src={props.url}
-        onLoad={() => {
-          setLoad(true);
-        }}
-      />
+      <div className="h-56 lg:w-64">
+        <img
+          className={`object-cover w-full h-full rounded-lg ${
+            !load ? "hidden" : "block"
+          }`}
+          src={props.url}
+          onLoad={() => {
+            setLoad(true);
+          }}
+        />
+      </div>
     </>
   );
 };

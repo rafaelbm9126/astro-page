@@ -7,7 +7,23 @@ import { ImageContentList } from "./ImageContentList";
 const INITIAL_ITEMS = 6;
 
 const Paginate = (to: number) => {
-  return _.orderBy(DataHome, ["date"], ["desc"]).slice(0, to);
+  const categories = [
+    "office",
+    "work",
+    "free",
+    "it",
+    "app",
+    "build",
+    "tecnologie",
+    "life",
+    "computer",
+    "internet",
+  ];
+  let collection = _.orderBy(DataHome, ["date"], ["desc"]).slice(0, to);
+  return collection.map((item) => ({
+    ...item,
+    image: `${item.image}${_.shuffle(categories)[0]}`,
+  }));
 };
 
 export const ListContent = () => {
@@ -31,6 +47,7 @@ export const ListContent = () => {
   });
 
   useEffect(() => {
+    console.log(paginate, data.length);
     setData(Paginate(paginate));
   }, [paginate]);
 
