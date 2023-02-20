@@ -1,10 +1,10 @@
 export const LazyLoaderImage = () => {
   return (
     <>
-      <div role="status" class="max-w-sm animate-pulse">
-        <div class="flex items-center justify-center w-full h-56 rounded-lg lg:w-64 mb-4 bg-gray-300 dark:bg-gray-700">
+      <div role="status" className="max-w-sm animate-pulse">
+        <div className="flex items-center justify-center w-full h-56 rounded-lg lg:w-64 mb-4 bg-gray-300 dark:bg-gray-700">
           <svg
-            class="w-12 h-12 text-gray-200 dark:text-gray-600"
+            className="w-12 h-12 text-gray-200 dark:text-gray-600"
             xmlns="http://www.w3.org/2000/svg"
             aria-hidden="true"
             fill="currentColor"
