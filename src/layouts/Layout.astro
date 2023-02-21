@@ -1,5 +1,6 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
+
 import { SITE_TITLE, SITE_DESCRIPTION } from '../data/consts';
 ---
 
@@ -9,11 +10,15 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../data/consts';
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body>
-		<slot />
+		<main class="w-full h-full">
+			<div class="flex flex-row justify-start min-h-screen bg-white">
+				<slot />
+			</div>
+		</main>
 	</body>
 </html>
 <style is:global>
-	:root {
+	/* :root {
 		--accent: 124, 58, 237;
 		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
 	}
@@ -24,5 +29,5 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../data/consts';
 	code {
 		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
 			Bitstream Vera Sans Mono, Courier New, monospace;
-	}
+	} */
 </style>

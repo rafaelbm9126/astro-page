@@ -1,21 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Menu from "../components/Menu.astro";
 import { ListContent } from "../components/ListContent";
 import HomeContainer from "../container/Home.astro";
-import Footer from "../components/Footer.astro";
+import NavBar from "../components/NavBar.astro";
 ---
 
-<Layout title="Test">
-  <main class="w-full h-full">
-    <div class="flex flex-row justify-start min-h-screen bg-white">
-      <Menu />
-      <HomeContainer>
-        <div class="container">
-          <ListContent client:load />
-        </div>
-        <Footer />
-      </HomeContainer>
-    </div>
-  </main>
+<Layout>
+  <NavBar />
+  <HomeContainer>
+    <ListContent client:load />
+  </HomeContainer>
 </Layout>

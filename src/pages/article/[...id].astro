@@ -1,0 +1,27 @@
+---
+import _ from "lodash";
+import DataHome from "../../data/data_home.json";
+import Layout from "../../layouts/Layout.astro";
+import ArticleContainer from "../../container/Article.astro";
+import NavBar from "../../components/NavBar.astro";
+import Dashboar from "../../components/Dashboar.astro";
+
+export function getStaticPaths() {
+  return DataHome.map((_, index) => ({
+    params: { id: index },
+  }));
+}
+
+const articles = _.orderBy(DataHome, ["date"], ["desc"]);
+
+const { id } = Astro.params;
+---
+
+<Layout>
+  <NavBar />
+  <ArticleContainer>
+    <Dashboar />
+    <h1 class="my-80" >{articles[parseInt(id || "0")].title}</h1>
+    <h1 class="my-80" >{articles[parseInt(id || "0")].title}</h1>
+  </ArticleContainer>
+</Layout>

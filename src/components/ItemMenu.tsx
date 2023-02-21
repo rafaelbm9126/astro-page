@@ -1,3 +1,4 @@
+import React from 'react';
 import type { FC } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import type { IconDefinition } from "@fortawesome/free-regular-svg-icons";

@@ -53,14 +53,14 @@ export const ListContent = () => {
 
   return (
     <>
-      <div className="grid grid-cols-1 gap-8 mt-8 md:mt-60 md:grid-cols-2">
+      <div className="grid grid-cols-1 gap-8 md:grid-cols-2 pl-10">
         {data.map((post, index) => (
           <div className="lg:flex max-w-xl" key={index}>
             <ImageContentList url={post.image} />
 
             <div className="flex flex-col justify-between pb-6 pt-1 max-sm:pt-3 lg:mx-6">
               <a
-                href="/"
+                href={`/article/${index + 1}`}
                 className="text-xl font-semibold text-gray-800 hover:underline dark:text-white"
               >
                 {post.title}
