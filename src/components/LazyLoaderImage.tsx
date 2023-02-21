@@ -1,4 +1,6 @@
-export const LazyLoaderImage = () => {
+import type { FC } from "react";
+
+export const LazyLoaderImage: FC<unknown> = () => {
   return (
     <>
       <div role="status" className="animate-pulse">

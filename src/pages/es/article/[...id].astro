@@ -1,10 +1,10 @@
 ---
 import _ from "lodash";
-import DataHome from "../../data/data_home.json";
-import Layout from "../../layouts/Layout.astro";
-import ArticleContainer from "../../container/Article.astro";
-import NavBar from "../../components/NavBar.astro";
-import Dashboar from "../../components/Dashboar.astro";
+import DataHome from "../../../data/data_home.json";
+import Layout from "../../../layouts/Layout.astro";
+import ArticleContainer from "../../../container/Article.astro";
+import NavBar from "../../../components/NavBar.astro";
+import Dashboar from "../../../components/Dashboar.astro";
 
 export function getStaticPaths() {
   return DataHome.map((_, index) => ({
@@ -18,7 +18,7 @@ const { id } = Astro.params;
 ---
 
 <Layout>
-  <NavBar linkLogo="/" />
+  <NavBar linkLogo="/es/" />
   <ArticleContainer>
     <Dashboar
       category={articles[parseInt(id || "0")].category}

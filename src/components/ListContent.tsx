@@ -1,3 +1,4 @@
+import type { FC } from "react";
 import { useState, useEffect } from "react";
 import _ from "lodash";
 import moment from "moment";
@@ -5,6 +6,10 @@ import DataHome from "../data/data_home.json";
 import { ImageContentList } from "./ImageContentList";
 
 const INITIAL_ITEMS = 6;
+
+interface Props {
+  linkLang: string;
+}
 
 const Paginate = (to: number) => {
   const categories = [
@@ -26,7 +31,7 @@ const Paginate = (to: number) => {
   }));
 };
 
-export const ListContent = () => {
+export const ListContent: FC<Props> = (props) => {
   const [paginate, setPaginate] = useState(INITIAL_ITEMS);
   const [data, setData] = useState(Paginate(paginate));
 
@@ -60,7 +65,7 @@ export const ListContent = () => {
 
             <div className="flex flex-col justify-between pb-6 pt-1 max-sm:pt-3 lg:mx-6">
               <a
-                href={`/article/${index + 1}`}
+                href={`${props.linkLang}article/${index + 1}`}
                 className="text-xl font-semibold text-gray-800 hover:underline dark:text-white"
               >
                 {post.title}
